@@ -18,15 +18,15 @@ app.get('/mailer',(req,res)=>{
     var emailid = req.query.email;
 
     var transporter = nodemailer.createTransport({
-        service: 'outlook',
+        service: 'gmail',
         auth: {
-            user: 'riyababum@outlook.com',
-            pass: 'riya@0813'
+            user: 'babumriya@gmail.com',
+            pass: 'abcd@1234'
         }
     });
 
     var mailOptions = {
-        from: 'riyababum@outlook.com',
+        from: 'babumriya@gmail.com',
         to: emailid,
         subject: 'Sending Email using Node.js',
         text: 'Sample mail for coding competition 2'
@@ -44,6 +44,6 @@ app.get('/mailer',(req,res)=>{
 });
 
 
-app.listen(process.env.PORT || 5000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(5000, function(){
+    console.log("Server started at 5000");
 });
